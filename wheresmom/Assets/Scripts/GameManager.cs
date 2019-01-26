@@ -33,11 +33,11 @@ public class GameManager : MonoBehaviour {
 			instance = this;
 		}
 		playerCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-	//	canvas = GameObject.FindGameObjectWithTag("hud").GetComponent<Canvas>();
+		canvas = GameObject.FindGameObjectWithTag("hud").GetComponent<Canvas>();
 		mom = GameObject.FindGameObjectWithTag("Mom").GetComponent<Mom>();
 		player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
 		controller = GameObject.FindGameObjectWithTag("Player").GetComponent<FirstPersonController>();
-		//timer = GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>();
+		timer = GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>();
 		interactImage = GameObject.FindGameObjectWithTag("InteractImage").GetComponent<Image>();
 		interactImage.enabled = false;
 	}
@@ -55,9 +55,9 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void Update() {
-		/* if(timer.timeUp) {
+		if(timer.timeUp) {
 			defeat = true;
-		}*/
+		}
 		if (Input.GetKeyDown(KeyCode.P)) {
 			isPaused = !isPaused;
 		}
@@ -90,4 +90,11 @@ public class GameManager : MonoBehaviour {
 		interactImage.enabled = false;
 	}
 
+	public void DisableControls(){
+		controller.enabled = false;
+	}
+
+	public void CrawlIntoHidingSpot(){
+		//controller.transform.
+	}
 }
