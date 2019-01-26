@@ -42,6 +42,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
 
+        private Vector2 oldInput;
+
         // Use this for initialization
         private void Start()
         {
@@ -206,7 +208,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             // Read input
             float horizontal = CrossPlatformInputManager.GetAxisRaw("Horizontal");
             float vertical = CrossPlatformInputManager.GetAxisRaw("Vertical");
-
+            
             bool waswalking = m_IsWalking;
 
 #if !MOBILE_INPUT
