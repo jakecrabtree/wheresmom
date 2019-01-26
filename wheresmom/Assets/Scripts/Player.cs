@@ -36,4 +36,5 @@ public class Player : MonoBehaviour
         float distance = Vector3.Distance(gameObject.transform.position, mom.transform.position);
         return distance;
     }
+
 }
