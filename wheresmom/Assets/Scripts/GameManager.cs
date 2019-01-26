@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour {
 	Timer timer;
 	Canvas canvas;
 	Camera playerCamera;
+	Image interactImage;
+
 	void Awake () {
 		alreadyPaused = false;
 		if(instance != null && instance != this) {
@@ -30,11 +32,13 @@ public class GameManager : MonoBehaviour {
 			instance = this;
 		}
 		playerCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-		canvas = GameObject.FindGameObjectWithTag("hud").GetComponent<Canvas>();
+	//	canvas = GameObject.FindGameObjectWithTag("hud").GetComponent<Canvas>();
 		mom = GameObject.FindGameObjectWithTag("Mom").GetComponent<Mom>();
 		player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
 		controller = GameObject.FindGameObjectWithTag("Player").GetComponent<FirstPersonController>();
-		timer = GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>();
+		//timer = GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>();
+		interactImage = GameObject.FindGameObjectWithTag("InteractImage").GetComponent<Image>();
+		interactImage.enabled = false;
 	}
 
 	public Player PlayerObj {
@@ -77,5 +81,14 @@ public class GameManager : MonoBehaviour {
 			controller.m_MouseLook.SetCursorLock(true);
 		}
 	}	
+
+	public void LoadInteractImage(string imagePath){
+		interactImage.sprite = Resources.Load<Sprite>(imagePath);
+		interactImage.enabled = true;
+	}
+
+	public void DisableInteractImage(){
+		interactImage.enabled = false;
+	}
 
 }

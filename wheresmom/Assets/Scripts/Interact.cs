@@ -21,18 +21,20 @@ public class Interact : MonoBehaviour
             Transform objectHit = hit.transform;
             Interactable inter = objectHit.gameObject.GetComponent<Interactable>();
             if (inter != null){
-                //TODO:Show Image
-                Debug.Log(objectHit.name);
+                string filepath = inter.getGuiFileName();
+                if (filepath != null){
+                    GameManager.Instance.LoadInteractImage(filepath);
+                }
                 if(Input.GetKeyDown(KeyCode.E)){
                     inter.Interact(gameObject);
                 }   
             }
             else{
-                //TODO: Disable image
+                GameManager.Instance.DisableInteractImage();
             }
         }
         else{
-            //TODO: Disable image
+            GameManager.Instance.DisableInteractImage();
         }
     }
 
