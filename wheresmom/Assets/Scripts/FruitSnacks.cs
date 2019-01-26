@@ -15,6 +15,7 @@ public class FruitSnacks : Interactable
     }
 
     public override void Interact(GameObject interactor){
+        //GameManager.Instance.PlayerObj
         Destroy(gameObject);
     }
 }
