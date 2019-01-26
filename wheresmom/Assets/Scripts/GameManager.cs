@@ -12,9 +12,10 @@ public class GameManager : MonoBehaviour {
 			return instance;
 		}
 	}
-	private bool defeat;
+	public bool defeat;
 	public bool isPaused;
 	public bool alreadyPaused;
+	public bool inAnimation = false;
 	public GameObject pausePrefab;
 	GameObject pauseScreen;
 	Player player;
@@ -75,7 +76,9 @@ public class GameManager : MonoBehaviour {
 			}
 		} else {
 			Time.timeScale = 1;
-			controller.enabled = true;
+			if (!inAnimation){
+				controller.enabled = true;
+			}
 			alreadyPaused = false;
 			Destroy(pauseScreen);
 			controller.m_MouseLook.SetCursorLock(true);
@@ -91,4 +94,43 @@ public class GameManager : MonoBehaviour {
 		interactImage.enabled = false;
 	}
 
+	public void DisableControls(){
+		controller.enabled = false;
+	}
+
+	public void CrawlIntoHidingSpot(Vector3 pos, Vector3 forward){
+		inAnimation = true;
+		DisableControls();
+		StartCoroutine(CrawlingAnimation(pos, forward));
+	}
+
+	float crouchTime = 0.33f;
+	float crouchDist = 1;
+	float crawlTime = 1f;
+	float turnTime = 1f;
+
+	public IEnumerator CrawlingAnimation(Vector3 pos, Vector3 forward){
+		Vector3 startControllerPos = controller.transform.position;
+		Vector3 startCameraPos = Camera.main.transform.position;
+		for(float i = 0; i <= crouchTime; i+= Time.deltaTime){
+			float dist = Mathf.Lerp(0, crouchDist, i/crouchTime);
+			Camera.main.transform.position = startCameraPos - new Vector3(0, dist, 0);
+			yield return null;
+		}
+		startCameraPos = Camera.main.transform.position;
+		Vector3 path = (pos - startControllerPos)*.8f;	
+		for(float i = 0; i <= crawlTime; i+= Time.deltaTime){
+			Vector3 curr = Vector3.Lerp(new Vector3(0,0,0), path, i/crawlTime);
+			controller.transform.position = startControllerPos + curr;
+			yield return null;
+		}
+		Quaternion startRot = Camera.main.transform.rotation;
+		Quaternion lookOnLook = Quaternion.LookRotation(forward- Camera.main.transform.position);
+	 	for(float i = 0; i <= turnTime; i+= Time.deltaTime){
+		 	Quaternion curr = Quaternion.Slerp(startRot, lookOnLook, i/turnTime);
+			Camera.main.transform.rotation = curr;
+			yield return null;
+		}
+		yield return null;
+	}
 }

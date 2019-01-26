@@ -20,7 +20,7 @@ public class Interact : MonoBehaviour
         if (Physics.Raycast(ray, out hit)) {
             Transform objectHit = hit.transform;
             Interactable inter = objectHit.gameObject.GetComponent<Interactable>();
-            if (inter != null){
+            if (inter != null && inter.canInteract(gameObject)){
                 string filepath = inter.getGuiFileName();
                 if (filepath != null){
                     GameManager.Instance.LoadInteractImage(filepath);
