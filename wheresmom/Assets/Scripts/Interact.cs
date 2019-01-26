@@ -15,11 +15,16 @@ public class Interact : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RaycastHit hit;
-        Ray ray = cam.ViewportPointToRay (new Vector3(0.5f,0.5f,0f));
-        
-        if (Physics.Raycast(ray, out hit)) {
-            Transform objectHit = hit.transform;
+        if(Input.GetKeyDown(KeyCode.E)){
+            RaycastHit hit;
+            Ray ray = cam.ViewportPointToRay (new Vector3(0.5f,0.5f,0f));
+            if (Physics.Raycast(ray, out hit)) {
+                Transform objectHit = hit.transform;
+                Interactable inter = objectHit.gameObject.GetComponent<Interactable>();
+                if (inter != null){
+                    inter.Interact();
+                }
+            }
         }
     }
 
