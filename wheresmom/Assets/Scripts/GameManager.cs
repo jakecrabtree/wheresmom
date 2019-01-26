@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class GameManager : MonoBehaviour {
 	private static GameManager instance;
 
@@ -32,11 +33,11 @@ public class GameManager : MonoBehaviour {
 			instance = this;
 		}
 		playerCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-	//	canvas = GameObject.FindGameObjectWithTag("hud").GetComponent<Canvas>();
+		canvas = GameObject.FindGameObjectWithTag("hud").GetComponent<Canvas>();
 		mom = GameObject.FindGameObjectWithTag("Mom").GetComponent<Mom>();
 		player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
 		controller = GameObject.FindGameObjectWithTag("Player").GetComponent<FirstPersonController>();
-		//timer = GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>();
+		timer = GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>();
 		interactImage = GameObject.FindGameObjectWithTag("InteractImage").GetComponent<Image>();
 		interactImage.enabled = false;
 	}
@@ -54,8 +55,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void Update() {
-		if(timer.timeUp) {
-			defeat = true;
+		if(timer.timeUp || defeat) {
 			controller.m_MouseLook.SetCursorLock(false);
 			SceneManager.LoadScene("Defeat");
 		}

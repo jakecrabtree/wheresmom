@@ -19,7 +19,7 @@ public class GPSDistance : MonoBehaviour
         if(!player.on) {
             score.text = "";
         } else { 
-            score.text = player.momDistance() + " m";
+            score.text = (int) Mathf.Floor(player.momDistance()) + " m";
         }
     }
 }
