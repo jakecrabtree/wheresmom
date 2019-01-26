@@ -21,6 +21,6 @@ public class HidingSpot : Interactable
 
     public override void Interact(GameObject interactor){
         GetComponent<Collider>().enabled = false;
-        GameManager.Instance.CrawlIntoHidingSpot(transform.position, lookDir.transform.position);
+        GameManager.Instance.CrawlIntoHidingSpot(transform.position, lookDir.transform.position, this);
     }
 }

@@ -14,7 +14,7 @@ public class FruitSnacks : Interactable
     bool consumed = false;
 
     void Start(){
-        guiFileName = "fruitsnacks";
+        guiFileName = "gusher";
     }
 
     public override void Interact(GameObject interactor){

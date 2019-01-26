@@ -6,7 +6,7 @@ using UnityEngine;
 public abstract class Interactable : MonoBehaviour
 {
     protected string guiFileName;
-    private string guiFolderName = "interact_gui";
+    private static string guiFolderName = "interact_gui";
 
     private float maxInteractDistance = 6.0f;
     public abstract void Interact(GameObject interactor);
@@ -16,6 +16,10 @@ public abstract class Interactable : MonoBehaviour
     }
 
     public string getGuiFileName(){
-        return (guiFileName == null) ? guiFileName : guiFolderName + Path.DirectorySeparatorChar + guiFileName;
+        return (guiFileName == null) ? guiFileName : makeAbsPath(guiFileName);
+    }
+
+    public static string makeAbsPath(string relPath){
+        return guiFolderName + Path.DirectorySeparatorChar + relPath;
     }
 }

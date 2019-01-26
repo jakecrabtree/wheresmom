@@ -16,6 +16,11 @@ public class GameManager : MonoBehaviour {
 	public bool isPaused;
 	public bool alreadyPaused;
 	public bool inAnimation = false;
+	public bool animationEnded = true;
+	public bool exitAnimationStarted = false;
+	private Vector3 initialPosition;
+	private Quaternion startRot;
+	private HidingSpot prevHidingSpot;
 	public GameObject pausePrefab;
 	GameObject pauseScreen;
 	Player player;
@@ -63,6 +68,10 @@ public class GameManager : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.P)) {
 			isPaused = !isPaused;
 		}
+		if (inAnimation && animationEnded && !exitAnimationStarted && Input.GetKeyDown(KeyCode.E)){
+			exitAnimationStarted = true;
+			StartCoroutine(CrawlingOutAnimation(initialPosition, controller.transform.position));
+		}
 	}
 	
 	void OnGUI() {
@@ -91,15 +100,19 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void DisableInteractImage(){
-		interactImage.enabled = false;
+		if (!inAnimation){
+			interactImage.enabled = false;
+		}
 	}
 
 	public void DisableControls(){
 		controller.enabled = false;
 	}
 
-	public void CrawlIntoHidingSpot(Vector3 pos, Vector3 forward){
+	public void CrawlIntoHidingSpot(Vector3 pos, Vector3 forward, HidingSpot hiding){
 		inAnimation = true;
+		animationEnded = false;
+		prevHidingSpot = hiding;
 		DisableControls();
 		StartCoroutine(CrawlingAnimation(pos, forward));
 	}
@@ -111,6 +124,7 @@ public class GameManager : MonoBehaviour {
 
 	public IEnumerator CrawlingAnimation(Vector3 pos, Vector3 forward){
 		Vector3 startControllerPos = controller.transform.position;
+		initialPosition = startControllerPos;
 		Vector3 startCameraPos = Camera.main.transform.position;
 		for(float i = 0; i <= crouchTime; i+= Time.deltaTime){
 			float dist = Mathf.Lerp(0, crouchDist, i/crouchTime);
@@ -124,13 +138,41 @@ public class GameManager : MonoBehaviour {
 			controller.transform.position = startControllerPos + curr;
 			yield return null;
 		}
-		Quaternion startRot = Camera.main.transform.rotation;
+		startRot = Camera.main.transform.rotation;
 		Quaternion lookOnLook = Quaternion.LookRotation(forward- Camera.main.transform.position);
 	 	for(float i = 0; i <= turnTime; i+= Time.deltaTime){
 		 	Quaternion curr = Quaternion.Slerp(startRot, lookOnLook, i/turnTime);
 			Camera.main.transform.rotation = curr;
 			yield return null;
 		}
+		animationEnded = true;
+		LoadInteractImage(Interactable.makeAbsPath("hidingexit"));
+		yield return null;
+	}
+
+	public IEnumerator CrawlingOutAnimation(Vector3 pos, Vector3 forward){
+		Quaternion initialRot = Camera.main.transform.rotation;
+	 	for(float i = 0; i <= turnTime; i+= Time.deltaTime){
+		 	Quaternion curr = Quaternion.Slerp(initialRot, startRot, i/turnTime);
+			Camera.main.transform.rotation = curr;
+			yield return null;
+		}
+		Vector3 startControllerPos = controller.transform.position;
+		Vector3 path = (pos - startControllerPos);	
+		for(float i = 0; i <= crawlTime; i+= Time.deltaTime){
+			Vector3 curr = Vector3.Lerp(new Vector3(0,0,0), path, i/crawlTime);
+			controller.transform.position = startControllerPos + curr;
+			yield return null;
+		}
+		Vector3 startCameraPos = Camera.main.transform.position;
+		for(float i = 0; i <= crouchTime; i+= Time.deltaTime){
+			float dist = Mathf.Lerp(0, crouchDist, i/crouchTime);
+			Camera.main.transform.position = startCameraPos + new Vector3(0, dist, 0);
+			yield return null;
+		}
+		inAnimation = false;
+		exitAnimationStarted = false;
+		prevHidingSpot.gameObject.GetComponent<Collider>().enabled = true;
 		yield return null;
 	}
 }
