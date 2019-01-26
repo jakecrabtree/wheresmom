@@ -101,7 +101,9 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void DisableInteractImage(){
-		interactImage.enabled = false;
+		if (!inAnimation){
+			interactImage.enabled = false;
+		}
 	}
 
 	public void DisableControls(){
@@ -145,6 +147,7 @@ public class GameManager : MonoBehaviour {
 			yield return null;
 		}
 		animationEnded = true;
+		LoadInteractImage(Interactable.makeAbsPath("hidingexit"));
 		yield return null;
 	}
 
