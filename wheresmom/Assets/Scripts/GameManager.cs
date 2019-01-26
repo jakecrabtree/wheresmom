@@ -73,6 +73,7 @@ public class GameManager : MonoBehaviour {
 			alreadyPaused = false;
 			Destroy(pauseScreen);
 			Cursor.visible = false;
+			Cursor.visible = false;
 		}
 	}	
 
