@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour {
 			return instance;
 		}
 	}
-	private bool defeat;
+	public bool defeat;
 	public bool isPaused;
 	public bool alreadyPaused;
 	public bool inAnimation = false;
