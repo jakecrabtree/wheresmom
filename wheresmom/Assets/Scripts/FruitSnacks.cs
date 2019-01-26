@@ -15,7 +15,7 @@ public class FruitSnacks : Interactable
     }
 
     public override void Interact(GameObject interactor){
-        //GameManager.Instance.PlayerObj
+       // GameManager.Instance.PlayerObj.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().
         Destroy(gameObject);
     }
 }
