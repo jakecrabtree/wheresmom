@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Fire
   - Mom
+  - Timer
+  - hud
   layers:
   - Default
   - TransparentFX
