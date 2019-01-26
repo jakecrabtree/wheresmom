@@ -65,15 +65,14 @@ public class GameManager : MonoBehaviour {
 				controller.enabled = false;
 				pauseScreen = (GameObject) Instantiate(pausePrefab, new Vector3(Screen.width * .5f, Screen.height * .5f, 0), Quaternion.identity, canvas.transform);
 				alreadyPaused = true;
-				Cursor.visible = true;
+				controller.m_MouseLook.SetCursorLock(false);
 			}
 		} else {
 			Time.timeScale = 1;
 			controller.enabled = true;
 			alreadyPaused = false;
 			Destroy(pauseScreen);
-			Cursor.visible = false;
-			Cursor.visible = false;
+			controller.m_MouseLook.SetCursorLock(true);
 		}
 	}	
 
