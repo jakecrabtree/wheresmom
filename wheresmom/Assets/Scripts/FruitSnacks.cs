@@ -21,6 +21,7 @@ public class FruitSnacks : Interactable
         if (!consumed){
             consumed = true;
             StartCoroutine("SugarRush");
+            GetComponent<Collider>().enabled = false;
             GetComponent<Renderer>().enabled = false;
         }
     }
