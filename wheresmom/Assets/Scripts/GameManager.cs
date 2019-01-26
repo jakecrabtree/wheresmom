@@ -73,6 +73,11 @@ public class GameManager : MonoBehaviour {
 			StartCoroutine(CrawlingOutAnimation(initialPosition, controller.transform.position));
 		}
 	}
+
+	public void Win(){
+		controller.m_MouseLook.SetCursorLock(false);
+		SceneManager.LoadScene("Victory");
+	}
 	
 	void OnGUI() {
 		if(isPaused) {
