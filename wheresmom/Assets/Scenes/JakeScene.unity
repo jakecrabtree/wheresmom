@@ -896,9 +896,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af7faa85a39f3654c8fb89f8fb704811, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defeat: 0
   isPaused: 0
   alreadyPaused: 0
   inAnimation: 0
+  animationEnded: 1
+  exitAnimationStarted: 0
   pausePrefab: {fileID: 0}
 --- !u!4 &1802481940
 Transform:
@@ -1238,7 +1241,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2064628306}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
