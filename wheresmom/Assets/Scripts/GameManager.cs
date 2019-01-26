@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
 public class GameManager : MonoBehaviour {
 	private static GameManager instance;
 
@@ -57,6 +57,8 @@ public class GameManager : MonoBehaviour {
 	void Update() {
 		if(timer.timeUp) {
 			defeat = true;
+			controller.m_MouseLook.SetCursorLock(false);
+			SceneManager.LoadScene("Defeat");
 		}
 		if (Input.GetKeyDown(KeyCode.P)) {
 			isPaused = !isPaused;
