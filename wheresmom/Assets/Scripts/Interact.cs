@@ -22,7 +22,7 @@ public class Interact : MonoBehaviour
                 Transform objectHit = hit.transform;
                 Interactable inter = objectHit.gameObject.GetComponent<Interactable>();
                 if (inter != null){
-                    inter.Interact();
+                    inter.Interact(gameObject);
                 }
             }
         }
