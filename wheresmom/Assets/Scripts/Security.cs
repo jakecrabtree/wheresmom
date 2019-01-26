@@ -13,6 +13,8 @@ public class Security : MonoBehaviour
     private int counter;
     [SerializeField]
     private float aggro_dist;
+    [SerializeField]
+    private float aggro_speed;
 
     public GameObject[] waypoints;
     private int target;
@@ -36,20 +38,22 @@ public class Security : MonoBehaviour
     {
         if (dead)
         {
-            // exit screen
+            GameManager.Instance.defeat = true;
         }
         else if (aggro)
         {
-
-            // store prev patrol target
-            // new target = kid, speed increased
+            guard.destination = GameManager.Instance.PlayerObj.transform.position;
+            guard.speed = aggro_speed;
+            if (Vector3.Distance(transform.position, guard.destination) > aggro_dist)
+                aggro = false;
         }
         else
         {
             guard.destination = waypoints[target].transform.position;
+            if (Vector3.Distance(transform.position, guard.destination) < 2)
+                Next();
         }
-        if (Vector3.Distance(transform.position, waypoints[target].transform.position) < 1)
-            Next();
+
     }
 
     private void OnTriggerEnter(Collider other)
