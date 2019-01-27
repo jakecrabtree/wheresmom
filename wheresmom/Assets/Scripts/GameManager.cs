@@ -156,10 +156,10 @@ public class GameManager : MonoBehaviour {
 		StartCoroutine(CrawlingAnimation(pos, forward));
 	}
 
-	public void CheckTug(bool realMom, NavRoamer tugged){
+	public void CheckTug(bool realMom){
 		inTugAnimation = true;
 		DisableControls();
-		StartCoroutine(TugAnimation(realMom, tugged));
+		StartCoroutine(TugAnimation(realMom));
 	}
 
 	float crouchTime = 0.33f;
@@ -169,7 +169,7 @@ public class GameManager : MonoBehaviour {
 	float tugTime = 3f;
 	float waitTime = 1f;
 
-	public IEnumerator TugAnimation(bool realMom, NavRoamer tugged) {
+	public IEnumerator TugAnimation(bool realMom) {
 		rightArmAnimator.Play("Tug");
 		yield return new WaitForSeconds(tugTime);
 		startRot = Camera.main.transform.rotation;
@@ -184,7 +184,6 @@ public class GameManager : MonoBehaviour {
 		rightArmAnimator.Play("Lower");
 		yield return new WaitForSeconds(waitTime);
 		inTugAnimation = false;
-		tugged.UnPause();
 		yield return null;
 	}
 
