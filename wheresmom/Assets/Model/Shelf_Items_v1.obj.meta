@@ -1,0 +1,297 @@
+fileFormatVersion: 2
+guid: d9d257832f65941c18bf795bdb76874a
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Cube.014_Cube.084_Material.005
+    100002: Cube.014_Cube.084_Material.007
+    100004: Cube.014_Cube.084_Material.008
+    100006: Cube.014_Cube.084_Material.010
+    100008: Cube.014_Cube.084_Material.011
+    100010: Cube.014_Cube.084_Material.012
+    100012: Cube.014_Cube.084_Material.013
+    100014: Cube.014_Cube.084_Material.014
+    100016: Cube.014_Cube.084_Material.016
+    100018: Cube.014_Cube.084_Material.017
+    100020: Cube.014_Cube.084_Material.018
+    100022: Cube.014_Cube.084_Material.019
+    100024: Cube.014_Cube.084_Material.020
+    100026: Cube.014_Cube.084_Material.021
+    100028: Cube.014_Cube.084_Material.022
+    100030: Cube.014_Cube.084_Material.023
+    100032: Cube.014_Cube.084_Material.025
+    100034: //RootNode
+    400000: Cube.014_Cube.084_Material.005
+    400002: Cube.014_Cube.084_Material.007
+    400004: Cube.014_Cube.084_Material.008
+    400006: Cube.014_Cube.084_Material.010
+    400008: Cube.014_Cube.084_Material.011
+    400010: Cube.014_Cube.084_Material.012
+    400012: Cube.014_Cube.084_Material.013
+    400014: Cube.014_Cube.084_Material.014
+    400016: Cube.014_Cube.084_Material.016
+    400018: Cube.014_Cube.084_Material.017
+    400020: Cube.014_Cube.084_Material.018
+    400022: Cube.014_Cube.084_Material.019
+    400024: Cube.014_Cube.084_Material.020
+    400026: Cube.014_Cube.084_Material.021
+    400028: Cube.014_Cube.084_Material.022
+    400030: Cube.014_Cube.084_Material.023
+    400032: Cube.014_Cube.084_Material.025
+    400034: //RootNode
+    2100000: Cube.014_Cube.084_Material.005Mat
+    2100002: Cube.014_Cube.084_Material.007Mat
+    2100004: Cube.014_Cube.084_Material.008Mat
+    2100006: Cube.014_Cube.084_Material.010Mat
+    2100008: Cube.014_Cube.084_Material.011Mat
+    2100010: Cube.014_Cube.084_Material.012Mat
+    2100012: Cube.014_Cube.084_Material.013Mat
+    2100014: Cube.014_Cube.084_Material.014Mat
+    2100016: Cube.014_Cube.084_Material.016Mat
+    2100018: Cube.014_Cube.084_Material.017Mat
+    2100020: Cube.014_Cube.084_Material.018Mat
+    2100022: Cube.014_Cube.084_Material.019Mat
+    2100024: Cube.014_Cube.084_Material.020Mat
+    2100026: Cube.014_Cube.084_Material.021Mat
+    2100028: Cube.014_Cube.084_Material.022Mat
+    2100030: Cube.014_Cube.084_Material.023Mat
+    2100032: Cube.014_Cube.084_Material.025Mat
+    2100034: Material.005
+    2100036: Material.007
+    2100038: Material.008
+    2100040: Material.010
+    2100042: Material.011
+    2100044: Material.012
+    2100046: Material.013
+    2100048: Material.014
+    2100050: Material.016
+    2100052: Material.017
+    2100054: Material.018
+    2100056: Material.019
+    2100058: Material.020
+    2100060: Material.021
+    2100062: Material.022
+    2100064: Material.023
+    2100066: Material.025
+    2300000: Cube.014_Cube.084_Material.005
+    2300002: Cube.014_Cube.084_Material.007
+    2300004: Cube.014_Cube.084_Material.008
+    2300006: Cube.014_Cube.084_Material.010
+    2300008: Cube.014_Cube.084_Material.011
+    2300010: Cube.014_Cube.084_Material.012
+    2300012: Cube.014_Cube.084_Material.013
+    2300014: Cube.014_Cube.084_Material.014
+    2300016: Cube.014_Cube.084_Material.016
+    2300018: Cube.014_Cube.084_Material.017
+    2300020: Cube.014_Cube.084_Material.018
+    2300022: Cube.014_Cube.084_Material.019
+    2300024: Cube.014_Cube.084_Material.020
+    2300026: Cube.014_Cube.084_Material.021
+    2300028: Cube.014_Cube.084_Material.022
+    2300030: Cube.014_Cube.084_Material.023
+    2300032: Cube.014_Cube.084_Material.025
+    3300000: Cube.014_Cube.084_Material.005
+    3300002: Cube.014_Cube.084_Material.007
+    3300004: Cube.014_Cube.084_Material.008
+    3300006: Cube.014_Cube.084_Material.010
+    3300008: Cube.014_Cube.084_Material.011
+    3300010: Cube.014_Cube.084_Material.012
+    3300012: Cube.014_Cube.084_Material.013
+    3300014: Cube.014_Cube.084_Material.014
+    3300016: Cube.014_Cube.084_Material.016
+    3300018: Cube.014_Cube.084_Material.017
+    3300020: Cube.014_Cube.084_Material.018
+    3300022: Cube.014_Cube.084_Material.019
+    3300024: Cube.014_Cube.084_Material.020
+    3300026: Cube.014_Cube.084_Material.021
+    3300028: Cube.014_Cube.084_Material.022
+    3300030: Cube.014_Cube.084_Material.023
+    3300032: Cube.014_Cube.084_Material.025
+    4300000: Cube.014_Cube.084_Material.005
+    4300002: Cube.014_Cube.084_Material.007
+    4300004: Cube.014_Cube.084_Material.008
+    4300006: Cube.014_Cube.084_Material.010
+    4300008: Cube.014_Cube.084_Material.011
+    4300010: Cube.014_Cube.084_Material.012
+    4300012: Cube.014_Cube.084_Material.013
+    4300014: Cube.014_Cube.084_Material.014
+    4300016: Cube.014_Cube.084_Material.016
+    4300018: Cube.014_Cube.084_Material.017
+    4300020: Cube.014_Cube.084_Material.018
+    4300022: Cube.014_Cube.084_Material.019
+    4300024: Cube.014_Cube.084_Material.020
+    4300026: Cube.014_Cube.084_Material.021
+    4300028: Cube.014_Cube.084_Material.022
+    4300030: Cube.014_Cube.084_Material.023
+    4300032: Cube.014_Cube.084_Material.025
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cube.014_Cube.084_Material.005Mat
+    second: {fileID: 2100000, guid: 2f15a89dd13ce49dba0cf92aebd26911, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cube.014_Cube.084_Material.007Mat
+    second: {fileID: 2100000, guid: 7884d72589c454827b27ef3a761e44b1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cube.014_Cube.084_Material.008Mat
+    second: {fileID: 2100000, guid: f1510a66e79a84897811bbb4a7ee43e2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cube.014_Cube.084_Material.010Mat
+    second: {fileID: 2100000, guid: 41dce9e9db852494d94cac1ea1ff49e1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cube.014_Cube.084_Material.011Mat
+    second: {fileID: 2100000, guid: d3b9da6e85b7448558701e21efdb7a42, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cube.014_Cube.084_Material.012Mat
+    second: {fileID: 2100000, guid: 48629af50c28c49a4a46a1a828cdb992, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cube.014_Cube.084_Material.013Mat
+    second: {fileID: 2100000, guid: 6c779e489f5e04473a13c6cfc7e58ed1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cube.014_Cube.084_Material.014Mat
+    second: {fileID: 2100000, guid: 723990a6a93434033b063763274660e3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cube.014_Cube.084_Material.016Mat
+    second: {fileID: 2100000, guid: 184f9414f82c94b44b50d586dbe18f98, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cube.014_Cube.084_Material.017Mat
+    second: {fileID: 2100000, guid: 8582ab22408284c7cbb0926889f391b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cube.014_Cube.084_Material.018Mat
+    second: {fileID: 2100000, guid: 58974d16623e24ec09f6bb52637e696f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cube.014_Cube.084_Material.019Mat
+    second: {fileID: 2100000, guid: e4d2d861805cf43578e81b4db39b0ff8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cube.014_Cube.084_Material.020Mat
+    second: {fileID: 2100000, guid: 8f6ed3f6246c542a48d330295e6bf7e4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cube.014_Cube.084_Material.021Mat
+    second: {fileID: 2100000, guid: d558ce05a385b424892bbccc83897563, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cube.014_Cube.084_Material.022Mat
+    second: {fileID: 2100000, guid: 01ea2d5a85d044974ac959ea779e1387, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cube.014_Cube.084_Material.023Mat
+    second: {fileID: 2100000, guid: d98972ba77569454e85d69f0d83f59d3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cube.014_Cube.084_Material.025Mat
+    second: {fileID: 2100000, guid: a566a1e883a064dcd879db3168fb051c, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
