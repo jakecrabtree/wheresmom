@@ -7,17 +7,18 @@ public class Security : MonoBehaviour
 {
     private Collider[] detectors;
     private NavMeshAgent guard;
+    private float initSpeed;
 
     private bool aggro;
     private bool dead;
     private int counter;
     [SerializeField]
-    private float aggro_dist;
+    private float aggroDist;
     [SerializeField]
-    private float aggro_speed;
+    private float aggroSpeed;
     [SerializeField]
-    private float aggro_delay_detach;
-    private float time_out_of_range;
+    private float aggroDelayDetach;
+    private float timeOutOfRange;
 
     public GameObject[] waypoints;
     private int target;
@@ -34,7 +35,8 @@ public class Security : MonoBehaviour
         guard = GetComponent<NavMeshAgent>();
         target = 0;
         direction = 1;
-        time_out_of_range = -1.0f;
+        timeOutOfRange = -1.0f;
+        initSpeed = guard.speed;
     }
 
     // Update is called once per frame
@@ -47,20 +49,21 @@ public class Security : MonoBehaviour
         else if (aggro)
         {
             guard.destination = GameManager.Instance.PlayerObj.transform.position;
-            guard.speed = aggro_speed;
-            if (time_out_of_range > 0)
+            guard.speed = aggroSpeed;
+            if (timeOutOfRange > 0)
             {
-                if (time_out_of_range - GameManager.Instance.timer.timeLeft >= aggro_delay_detach)
+                if (timeOutOfRange - GameManager.Instance.timer.timeLeft >= aggroDelayDetach)
                 {
                     aggro = false;
-                    time_out_of_range = -1.0f;
+                    timeOutOfRange = -1.0f;
+                    guard.speed = initSpeed;
                     Debug.Log("De-aggroed");
                 }
             }
-            else if (Vector3.Distance(transform.position, guard.destination) > aggro_dist)
+            else if (Vector3.Distance(transform.position, guard.destination) > aggroDist)
             {
                 Debug.Log("out of range.");
-                time_out_of_range = GameManager.Instance.timer.timeLeft;
+                timeOutOfRange = GameManager.Instance.timer.timeLeft;
             }
         }
         else
@@ -76,12 +79,10 @@ public class Security : MonoBehaviour
     {
         if (counter == 0 && other.tag == "Player")
         {
-            Debug.Log("aggro");
             aggro = true;
             counter++;
         } else if(counter == 1 && other.tag == "Player")
         {
-            Debug.Log("Dead!");
             dead = true;
             counter++;
         }
