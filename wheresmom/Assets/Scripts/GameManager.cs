@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour {
 	public bool isPaused;
 	public bool alreadyPaused;
 	public bool inAnimation = false;
+	public bool inTugAnimation = false;
 	public bool animationEnded = true;
 	public bool exitAnimationStarted = false;
 	private Vector3 initialPosition;
@@ -24,6 +25,7 @@ public class GameManager : MonoBehaviour {
 	public GameObject pausePrefab;
 	GameObject pauseScreen;
 	Player player;
+	Animator rightArmAnimator;
 	FirstPersonController controller;
 	Mom mom;
 	public Timer timer;
@@ -46,6 +48,7 @@ public class GameManager : MonoBehaviour {
 		timer = GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>();
 		interactImage = GameObject.FindGameObjectWithTag("InteractImage").GetComponent<Image>();
 		interactImage.enabled = false;
+		rightArmAnimator = GameObject.FindGameObjectWithTag("RightArm").GetComponent<Animator>();
 	}
 
 	public Player PlayerObj {
@@ -90,7 +93,7 @@ public class GameManager : MonoBehaviour {
 			}
 		} else {
 			Time.timeScale = 1;
-			if (!inAnimation){
+			if (!inAnimation && !inTugAnimation){
 				controller.enabled = true;
 			}
 			alreadyPaused = false;
@@ -122,10 +125,36 @@ public class GameManager : MonoBehaviour {
 		StartCoroutine(CrawlingAnimation(pos, forward));
 	}
 
+	public void CheckTug(bool realMom){
+		inTugAnimation = true;
+		DisableControls();
+		StartCoroutine(TugAnimation(realMom));
+	}
+
 	float crouchTime = 0.33f;
 	float crouchDist = 1;
 	float crawlTime = 1f;
 	float turnTime = 1f;
+	float tugTime = 3f;
+	float waitTime = 1f;
+
+	public IEnumerator TugAnimation(bool realMom) {
+		rightArmAnimator.Play("Tug");
+		yield return new WaitForSeconds(tugTime);
+		startRot = Camera.main.transform.rotation;
+	 	for(float i = 0; i <= turnTime; i+= Time.deltaTime){
+		 	Camera.main.transform.Rotate(new Vector3(-1.0f, 0, 0) * Time.deltaTime * 30);
+			yield return null;
+		}
+		if(realMom) {
+			GameManager.Instance.Win();
+			yield return null;
+		}
+		rightArmAnimator.Play("Lower");
+		yield return new WaitForSeconds(waitTime);
+		inTugAnimation = false;
+		yield return null;
+	}
 
 	public IEnumerator CrawlingAnimation(Vector3 pos, Vector3 forward){
 		Vector3 startControllerPos = controller.transform.position;

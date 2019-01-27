@@ -8,7 +8,7 @@ public abstract class Interactable : MonoBehaviour
     protected string guiFileName;
     private static string guiFolderName = "interact_gui";
 
-    private float maxInteractDistance = 6.0f;
+    public float maxInteractDistance = 6.0f;
     public abstract void Interact(GameObject interactor);
 
     public bool canInteract(GameObject interactor){

@@ -9,14 +9,12 @@ public class Mom : Interactable
     bool realMom = false;
     void Start()
     {
+        maxInteractDistance = 2.0f;
         guiFileName = "mom";
     }
 
 
     public override void Interact(GameObject interactor){
-        //TODO: play animation
-        if (realMom){
-            GameManager.Instance.Win();
-        }
+        GameManager.Instance.CheckTug(realMom);
     }
 }

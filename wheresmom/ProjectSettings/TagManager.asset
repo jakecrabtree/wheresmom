@@ -9,6 +9,7 @@ TagManager:
   - Timer
   - hud
   - InteractImage
+  - RightArm
   layers:
   - Default
   - TransparentFX
