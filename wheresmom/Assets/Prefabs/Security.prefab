@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 955695320052343638}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.05, y: 1.86, z: -2.36}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.25}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.3}
   m_Children:
   - {fileID: 5801119450819323351}
   m_Father: {fileID: 0}
@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4357e56befb40423b9d447649afded72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aggroDist: 12
+  aggroDist: 14
   aggroSpeed: 2
   aggroDelayDetach: 1
   waypoints:
@@ -112,8 +112,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.8550363, y: 1.8392019, z: 4.5625067}
-  m_Center: {x: 0.047609568, y: 0, z: 3.417192}
+  m_Size: {x: 1.8550364, y: 1.839202, z: 4.641423}
+  m_Center: {x: 0.047609605, y: 0, z: 3.4566505}
 --- !u!195 &955695320052343646
 NavMeshAgent:
   m_ObjectHideFlags: 0
