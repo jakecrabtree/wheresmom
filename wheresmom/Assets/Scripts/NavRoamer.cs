@@ -8,6 +8,9 @@ public class NavRoamer : MonoBehaviour
     public GameObject[] waypoints;
     private int target;
     private int direction;
+    private bool isMom;
+    private bool justInAnim;
+    private float initSpeed;
 
     private NavMeshAgent agent;
     // Start is called before the first frame update
@@ -16,6 +19,11 @@ public class NavRoamer : MonoBehaviour
         target = 0;
         direction = 1;
         agent = GetComponent<NavMeshAgent>();
+        isMom = false;
+        justInAnim = false;
+        initSpeed = agent.speed;
+        if (tag == "Mom")
+            isMom = true;
     }
 
     // Update is called once per frame
@@ -25,6 +33,15 @@ public class NavRoamer : MonoBehaviour
         if (Vector3.Distance(transform.position, waypoints[target].transform.position) < 2)
         {
             Next();
+        }
+        if (isMom && GameManager.Instance.inTugAnimation)
+        {
+            agent.speed = 0;
+            justInAnim = true;
+        } else if(isMom && justInAnim)
+        {
+            justInAnim = false;
+            agent.speed = initSpeed;
         }
     }
 
