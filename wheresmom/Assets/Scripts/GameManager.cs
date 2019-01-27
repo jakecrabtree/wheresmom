@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour {
 			return instance;
 		}
 	}
+	public AudioClip winSound;
+	public AudioClip heartbeatSound;
+	public AudioClip breathingSound;
 	public bool defeat;
 	public bool isPaused;
 	public bool alreadyPaused;
@@ -87,6 +90,7 @@ public class GameManager : MonoBehaviour {
 
 	public void Win(){
 		controller.m_MouseLook.SetCursorLock(false);
+		playerSpeaker.PlayOneShot(winSound, .5f);
 		SceneManager.LoadScene("Victory");
 	}
 	
@@ -187,6 +191,7 @@ public class GameManager : MonoBehaviour {
 			Camera.main.transform.rotation = curr;
 			yield return null;
 		}
+		playerSpeaker.PlayOneShot(heartbeatSound, .5f);
 		animationEnded = true;
 		LoadInteractImage(Interactable.makeAbsPath("hidingexit"));
 		yield return null;

@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     public static float consumptionRate = .1f;
     public static float maxEnergy = 100.0f;
     public float energy;
+    public AudioClip beepSound;
     public bool on = false;
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,8 @@ public class Player : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(1) && energy > 0.0f) {
             on = true;
+            AudioSource speaker = GameManager.Instance.SpeakerObj;
+            speaker.PlayOneShot(beepSound, .05f);
         }
         if (Input.GetMouseButtonUp(1)) {
             on = false;
