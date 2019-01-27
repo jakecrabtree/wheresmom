@@ -121,8 +121,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4357e56befb40423b9d447649afded72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aggro_dist: 8
-  aggro_speed: 2
+  aggroDist: 0
+  aggroSpeed: 0
+  aggroDelayDetach: 0
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
