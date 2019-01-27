@@ -14,7 +14,7 @@ public class StartGame : MonoBehaviour
 	}
 	
 	void OpenGame() {
-		SceneManager.LoadScene("Game"); 
+		SceneManager.LoadScene("JakeGame"); 
         Time.timeScale = 1;
 	}
 }
