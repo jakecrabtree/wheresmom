@@ -82,6 +82,11 @@ PrefabInstance:
       propertyPath: m_Center.x
       value: 0.020929724
       objectReference: {fileID: 0}
+    - target: {fileID: 7963332788889346420, guid: 098f8a9cfefa74e659fd0d6bd6f1f412,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4357615583799029137, guid: 098f8a9cfefa74e659fd0d6bd6f1f412,
         type: 3}
       propertyPath: m_Bones.Array.data[0]
@@ -232,6 +237,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -1.05
       objectReference: {fileID: 0}
+    - target: {fileID: 1348001244130671438, guid: 098f8a9cfefa74e659fd0d6bd6f1f412,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 64c7179070cae4bd48004348019c6fe2, type: 2}
     - target: {fileID: 1348001244134802830, guid: 098f8a9cfefa74e659fd0d6bd6f1f412,
         type: 3}
       propertyPath: m_Bones.Array.data[0]
