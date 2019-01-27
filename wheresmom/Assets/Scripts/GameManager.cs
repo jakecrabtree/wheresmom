@@ -77,10 +77,18 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void Update() {
-		if(timer.timeUp || defeat) {
+		if (defeat){
 			controller.m_MouseLook.SetCursorLock(false);
+<<<<<<< HEAD
 			playerSpeaker.PlayOneShot(defeatSound, .5f);
 			SceneManager.LoadScene("Defeat");
+=======
+			SceneManager.LoadScene("Jailed");
+		}
+		if(timer.timeUp) {
+			controller.m_MouseLook.SetCursorLock(false);
+			SceneManager.LoadScene("Timeout");
+>>>>>>> 5006c1099956dbca28fa3e7d9addc4c244145a8f
 		}
 		if (Input.GetKeyDown(KeyCode.P)) {
 			isPaused = !isPaused;

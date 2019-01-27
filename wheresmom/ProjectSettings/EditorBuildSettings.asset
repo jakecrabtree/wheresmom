@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Game Scenes/Game.unity
     guid: ee72ee2ab45c1d748bd6f2e6214d0ed7
   - enabled: 1
-    path: Assets/Scenes/Game Scenes/Defeat.unity
+    path: Assets/Scenes/Game Scenes/Timeout.unity
     guid: e6d5f3235ef902c4b9790ff02d4bc4bd
   - enabled: 1
     path: Assets/Scenes/Game Scenes/Victory.unity
