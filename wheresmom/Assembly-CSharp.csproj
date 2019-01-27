@@ -60,10 +60,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\GoogleVR\Scripts\Audio\FmodGvrAudio.cs" />
-    <Compile Include="Assets\GoogleVR\Scripts\Audio\FmodGvrAudioRoom.cs" />
-    <Compile Include="Assets\ResonanceAudio\Scripts\FmodResonanceAudio.cs" />
-    <Compile Include="Assets\ResonanceAudio\Scripts\FmodResonanceAudioRoom.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs" />
@@ -73,12 +69,12 @@
     <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
     <Compile Include="Assets\Scripts\Batteries.cs" />
-    <Compile Include="Assets\Scripts\Footsteps.cs" />
     <Compile Include="Assets\Scripts\FruitSnacks.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\GPSDistance.cs" />
     <Compile Include="Assets\Scripts\GPSEnergy.cs" />
     <Compile Include="Assets\Scripts\GUI\ExitGame.cs" />
+    <Compile Include="Assets\Scripts\GUI\HelpPop.cs" />
     <Compile Include="Assets\Scripts\GUI\StartGame.cs" />
     <Compile Include="Assets\Scripts\GUI\Unpause.cs" />
     <Compile Include="Assets\Scripts\HidingSpot.cs" />
@@ -87,8 +83,6 @@
     <Compile Include="Assets\Scripts\Interactable.cs" />
     <Compile Include="Assets\Scripts\Mom.cs" />
     <Compile Include="Assets\Scripts\NavRoamer.cs" />
-    <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
-    <Compile Include="Assets\Scripts\NPC.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\PlayerArm.cs" />
     <Compile Include="Assets\Scripts\Security.cs" />
