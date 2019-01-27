@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
+    path: Assets/Scenes/Game Scenes/IntroVideo.unity
+    guid: f919d9fa6a537469e94b7c5f2e02585b
+  - enabled: 1
     path: Assets/Scenes/Game Scenes/Main.unity
     guid: f5bd927b326013b4a8db007e1158cffc
   - enabled: 0
@@ -32,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/JakeGame.unity
     guid: e873ffb6d2d384585bfd3e8959c22e53
+  - enabled: 1
+    path: Assets/Scenes/Game Scenes/Timeout.unity
+    guid: 81a342cf33d594251a53d5058681b971
   m_configObjects: {}
