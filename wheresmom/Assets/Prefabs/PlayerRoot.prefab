@@ -553,6 +553,7 @@ GameObject:
   - component: {fileID: 7825703941252327638}
   - component: {fileID: 7825703941252327639}
   - component: {fileID: 7825703941252327635}
+  - component: {fileID: 781721416040415859}
   m_Layer: 0
   m_Name: PlayerRoot
   m_TagString: Player
@@ -809,6 +810,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   energy: 0
   on: 0
+--- !u!114 &781721416040415859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7825703941252327636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fd2c007d8b8f4ea291c8ffb7ee4b511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7825703942038529215
 GameObject:
   m_ObjectHideFlags: 0
@@ -821,6 +834,7 @@ GameObject:
   - component: {fileID: 7825703942038529209}
   - component: {fileID: 7825703942038529214}
   - component: {fileID: 7825703942038529211}
+  - component: {fileID: 3030629584000353948}
   m_Layer: 0
   m_Name: PlayerCamera
   m_TagString: MainCamera
@@ -836,7 +850,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7825703942038529215}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.225, z: 0}
+  m_LocalPosition: {x: 0, y: 0.22500002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7825703941252327632}
@@ -902,6 +916,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec1e018048483446c8be8617a4e4717f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3030629584000353948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7825703942038529215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fd2c007d8b8f4ea291c8ffb7ee4b511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &939359228194469538
