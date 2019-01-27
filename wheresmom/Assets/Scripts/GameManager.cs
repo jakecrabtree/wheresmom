@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour {
 	Mom mom;
 	public Timer timer;
 	Canvas canvas;
-	Camera playerCamera;
+	public Camera playerCamera;
 	Image interactImage;
 
 	void Awake () {
