@@ -60,12 +60,10 @@ public class Security : MonoBehaviour
     {
         if (counter == 0 && other.tag == "Player")
         {
-            Debug.Log("aggro");
             aggro = true;
             counter++;
         } else if(counter == 1 && other.tag == "Player")
         {
-            Debug.Log("Dead!");
             dead = true;
             counter++;
         }
