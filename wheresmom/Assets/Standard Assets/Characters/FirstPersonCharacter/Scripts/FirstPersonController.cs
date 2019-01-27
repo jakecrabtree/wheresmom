@@ -142,18 +142,17 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_CollisionFlags = m_CharacterController.Move(m_MoveDir*Time.fixedDeltaTime);
 
 
-            
+            /* 
             if((m_Input.x != 0 || m_Input.y != 0) && !isPlaying) {
                 m_AudioSource.loop = true;
                 m_AudioSource.clip = walkLoop;
                 m_AudioSource.volume = 0.4f;
                 m_AudioSource.Play();
                 isPlaying = true;
-                Debug.Log("Play" + isPlaying);
             } else {
                 
                 isPlaying = false;
-            }
+            }*/
 
             //ProgressStepCycle(speed);
             UpdateCameraPosition(speed);
