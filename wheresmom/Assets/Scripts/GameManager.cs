@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour {
 	Player player;
 	FirstPersonController controller;
 	Mom mom;
-	Timer timer;
+	public Timer timer;
 	Canvas canvas;
 	Camera playerCamera;
 	Image interactImage;

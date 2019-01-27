@@ -7,14 +7,18 @@ public class Security : MonoBehaviour
 {
     private Collider[] detectors;
     private NavMeshAgent guard;
+    private float initSpeed;
 
     private bool aggro;
     private bool dead;
     private int counter;
     [SerializeField]
-    private float aggro_dist;
+    private float aggroDist;
     [SerializeField]
-    private float aggro_speed;
+    private float aggroSpeed;
+    [SerializeField]
+    private float aggroDelayDetach;
+    private float timeOutOfRange;
 
     public GameObject[] waypoints;
     private int target;
@@ -31,6 +35,8 @@ public class Security : MonoBehaviour
         guard = GetComponent<NavMeshAgent>();
         target = 0;
         direction = 1;
+        timeOutOfRange = -1.0f;
+        initSpeed = guard.speed;
     }
 
     // Update is called once per frame
@@ -43,9 +49,22 @@ public class Security : MonoBehaviour
         else if (aggro)
         {
             guard.destination = GameManager.Instance.PlayerObj.transform.position;
-            guard.speed = aggro_speed;
-            if (Vector3.Distance(transform.position, guard.destination) > aggro_dist)
-                aggro = false;
+            guard.speed = aggroSpeed;
+            if (timeOutOfRange > 0)
+            {
+                if (timeOutOfRange - GameManager.Instance.timer.timeLeft >= aggroDelayDetach)
+                {
+                    aggro = false;
+                    timeOutOfRange = -1.0f;
+                    guard.speed = initSpeed;
+                    Debug.Log("De-aggroed");
+                }
+            }
+            else if (Vector3.Distance(transform.position, guard.destination) > aggroDist)
+            {
+                Debug.Log("out of range.");
+                timeOutOfRange = GameManager.Instance.timer.timeLeft;
+            }
         }
         else
         {

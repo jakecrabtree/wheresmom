@@ -2408,6 +2408,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1889128081}
+  - component: {fileID: 1889128083}
   - component: {fileID: 1889128082}
   m_Layer: 0
   m_Name: PlayerCharacter_Arms_V1
@@ -2452,6 +2453,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1889128083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889128080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9701f7a0c4b74143b3be945594da251, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5364756962477436441
 PrefabInstance:
   m_ObjectHideFlags: 0
