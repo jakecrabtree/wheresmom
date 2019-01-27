@@ -7,7 +7,7 @@ public class Mom : Interactable
 
     [SerializeField]
     bool realMom = false;
-    void Start()
+    void Awake()
     {
         maxInteractDistance = 2.0f;
         guiFileName = "mom";

@@ -16,7 +16,7 @@ public class DoorOfDeath : MonoBehaviour
         
     }
 
-    void OnTriggerEnter(Collision other){
+    void OnTriggerEnter(Collider other){
         if (other.transform.CompareTag("Player")){
             GameManager.Instance.Die();
 	    }

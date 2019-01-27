@@ -32,6 +32,9 @@ public class Interact : MonoBehaviour
             else{
                 GameManager.Instance.DisableInteractImage();
             }
+            if (inter != null){
+                Debug.Log(inter.getGuiFileName() + inter.canInteract(gameObject) );
+            }
         }
         else{
             GameManager.Instance.DisableInteractImage();

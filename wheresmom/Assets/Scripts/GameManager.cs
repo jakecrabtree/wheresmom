@@ -76,6 +76,9 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
+	public bool isHiding(){
+		return inAnimation && animationEnded && !exitAnimationStarted;
+	}
 	public void Die(){
 		controller.m_MouseLook.SetCursorLock(false);
 		SceneManager.LoadScene("Timeout");
