@@ -28,6 +28,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private AudioClip m_JumpSound;           // the sound played when character leaves the ground.
         [SerializeField] private AudioClip m_LandSound;           // the sound played when character touches back on ground.
 
+        [SerializeField] private AudioClip walkLoop;    
         private Camera m_Camera;
         private bool m_Jump;
         private float m_YRotation;
@@ -41,6 +42,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_NextStep;
         private bool m_Jumping;
         private AudioSource m_AudioSource;
+
+        public bool isPlaying = false;
 
         private Vector2 oldInput;
 
@@ -138,7 +141,21 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
             m_CollisionFlags = m_CharacterController.Move(m_MoveDir*Time.fixedDeltaTime);
 
-            ProgressStepCycle(speed);
+
+            
+            if((m_Input.x != 0 || m_Input.y != 0) && !isPlaying) {
+                m_AudioSource.loop = true;
+                m_AudioSource.clip = walkLoop;
+                m_AudioSource.volume = 0.4f;
+                m_AudioSource.Play();
+                isPlaying = true;
+                Debug.Log("Play" + isPlaying);
+            } else {
+                
+                isPlaying = false;
+            }
+
+            //ProgressStepCycle(speed);
             UpdateCameraPosition(speed);
 
             m_MouseLook.UpdateCursorLock();
@@ -151,7 +168,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_AudioSource.Play();
         }
 
-    
+        
         private void ProgressStepCycle(float speed)
         {
             if (m_CharacterController.velocity.sqrMagnitude > 0 && (m_Input.x != 0 || m_Input.y != 0))
@@ -220,11 +237,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             
             bool waswalking = m_IsWalking;
 
-#if !MOBILE_INPUT
-            // On standalone builds, walk/run speed is modified by a key press.
-            // keep track of whether or not the character is walking or running
-            m_IsWalking = !Input.GetKey(KeyCode.LeftShift);
-#endif
             // set the desired speed to be walking or running
             speed = m_IsWalking ? m_WalkSpeed : m_RunSpeed;
             m_Input = new Vector2(horizontal, vertical);

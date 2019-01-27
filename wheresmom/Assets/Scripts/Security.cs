@@ -8,7 +8,7 @@ public class Security : MonoBehaviour
     private Collider[] detectors;
     private NavMeshAgent guard;
     private float initSpeed;
-
+    
     private bool aggro;
     private bool dead;
     private int counter;
