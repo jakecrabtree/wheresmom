@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour {
 	Player player;
 	FirstPersonController controller;
 	Mom mom;
-	Timer timer;
+	public Timer timer;
 	Canvas canvas;
 	Camera playerCamera;
 	Image interactImage;
@@ -72,6 +72,11 @@ public class GameManager : MonoBehaviour {
 			exitAnimationStarted = true;
 			StartCoroutine(CrawlingOutAnimation(initialPosition, controller.transform.position));
 		}
+	}
+
+	public void Win(){
+		controller.m_MouseLook.SetCursorLock(false);
+		SceneManager.LoadScene("Victory");
 	}
 	
 	void OnGUI() {
