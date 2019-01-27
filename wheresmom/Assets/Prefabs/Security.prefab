@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aggro_dist: 8
-  aggro_speed: 0.75
+  aggro_speed: 2
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
