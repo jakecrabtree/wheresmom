@@ -48,6 +48,10 @@ public class Security : MonoBehaviour
         }
         else if (aggro)
         {
+            if (GameManager.Instance.isHiding()){
+                aggro = true;
+                return;
+            }
             guard.destination = GameManager.Instance.PlayerObj.transform.position;
             guard.speed = aggroSpeed;
             if (timeOutOfRange > 0)
