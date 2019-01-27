@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour {
 	private Quaternion startRot;
 	private HidingSpot prevHidingSpot;
 	public GameObject pausePrefab;
+	AudioSource playerSpeaker;
 	GameObject pauseScreen;
 	Player player;
 	Animator rightArmAnimator;
@@ -49,6 +50,7 @@ public class GameManager : MonoBehaviour {
 		interactImage = GameObject.FindGameObjectWithTag("InteractImage").GetComponent<Image>();
 		interactImage.enabled = false;
 		rightArmAnimator = GameObject.FindGameObjectWithTag("RightArm").GetComponent<Animator>();
+		playerSpeaker = GameObject.FindGameObjectWithTag("Player").GetComponent<AudioSource>();
 	}
 
 	public Player PlayerObj {
@@ -60,6 +62,12 @@ public class GameManager : MonoBehaviour {
 	public Mom MomObj {
 		get {
 			return mom;
+		}
+	}
+
+	public AudioSource SpeakerObj {
+		get {
+			return playerSpeaker;
 		}
 	}
 
