@@ -31,10 +31,6 @@ public class GameManager : MonoBehaviour {
 	Camera playerCamera;
 	Image interactImage;
 
-	public bool hiding(){
-		return inAnimation && animationEnded && !exitAnimationStarted;
-	}
-
 	void Awake () {
 		alreadyPaused = false;
 		if(instance != null && instance != this) {
