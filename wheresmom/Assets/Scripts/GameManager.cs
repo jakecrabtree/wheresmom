@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour {
 		timer = GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>();
 		interactImage = GameObject.FindGameObjectWithTag("InteractImage").GetComponent<Image>();
 		interactImage.enabled = false;
-		rightArmAnimator = GameObject.FindGameObjectWithTag("RightArm").GetComponent<Animator>();
+//		rightArmAnimator = GameObject.FindGameObjectWithTag("RightArm").GetComponent<Animator>();
 	}
 
 	public Player PlayerObj {
