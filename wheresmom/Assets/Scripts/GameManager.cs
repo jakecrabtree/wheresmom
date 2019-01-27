@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour {
 	public AudioClip winSound;
 	public AudioClip heartbeatSound;
 	public AudioClip breathingSound;
+	public AudioClip rustlingSound;
+	public AudioClip defeatSound;
 	public bool defeat;
 	public bool isPaused;
 	public bool alreadyPaused;
@@ -81,6 +83,7 @@ public class GameManager : MonoBehaviour {
 	void Update() {
 		if (defeat){
 			controller.m_MouseLook.SetCursorLock(false);
+			playerSpeaker.PlayOneShot(defeatSound, .5f);
 			SceneManager.LoadScene("Jailed");
 		}
 		if(timer.timeUp) {
@@ -184,6 +187,7 @@ public class GameManager : MonoBehaviour {
 			Camera.main.transform.position = startCameraPos - new Vector3(0, dist, 0);
 			yield return null;
 		}
+		playerSpeaker.PlayOneShot(rustlingSound, .5f);
 		startCameraPos = Camera.main.transform.position;
 		Vector3 path = (pos - startControllerPos)*.8f;	
 		for(float i = 0; i <= crawlTime; i+= Time.deltaTime){
@@ -218,6 +222,7 @@ public class GameManager : MonoBehaviour {
 			controller.transform.position = startControllerPos + curr;
 			yield return null;
 		}
+		playerSpeaker.PlayOneShot(rustlingSound, .5f);
 		Vector3 startCameraPos = Camera.main.transform.position;
 		for(float i = 0; i <= crouchTime; i+= Time.deltaTime){
 			float dist = Mathf.Lerp(0, crouchDist, i/crouchTime);

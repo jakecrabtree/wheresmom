@@ -1791,6 +1791,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af7faa85a39f3654c8fb89f8fb704811, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  winSound: {fileID: 8300000, guid: 0605ea59537bcf348b4a30e9f888de2d, type: 3}
+  heartbeatSound: {fileID: 8300000, guid: 2fe009d30a9e01243999700501e7a63d, type: 3}
+  breathingSound: {fileID: 8300000, guid: e83eed1c4febb634cbfdd062a71d878d, type: 3}
+  rustlingSound: {fileID: 8300000, guid: 39e087407f15f9d49a0384a9db5961b6, type: 3}
+  defeatSound: {fileID: 8300000, guid: a7573950746e4a94e8d0838c2b678c63, type: 3}
   defeat: 0
   isPaused: 0
   alreadyPaused: 0
@@ -2517,10 +2522,11 @@ MonoBehaviour:
   m_JumpBob:
     BobDuration: 0
     BobAmount: 0
-  m_StepInterval: 0.5
+  m_StepInterval: 1
   m_FootstepSounds: []
   m_JumpSound: {fileID: 0}
   m_LandSound: {fileID: 0}
+  walkLoop: {fileID: 8300000, guid: 895fea98043b4be43b9a700bc41d9992, type: 3}
 --- !u!82 &7031027732172339429
 AudioSource:
   m_ObjectHideFlags: 0
