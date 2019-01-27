@@ -76,6 +76,10 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
+	public void Die(){
+		controller.m_MouseLook.SetCursorLock(false);
+		SceneManager.LoadScene("Timeout");
+	}
 	void Update() {
 		if (defeat){
 			playerSpeaker.PlayOneShot(defeatSound, .5f);
@@ -86,7 +90,11 @@ public class GameManager : MonoBehaviour {
 			playerSpeaker.PlayOneShot(defeatSound, .5f);
 			controller.m_MouseLook.SetCursorLock(false);
 			SceneManager.LoadScene("Timeout");
+			controller.m_MouseLook.SetCursorLock(false);
+			playerSpeaker.PlayOneShot(defeatSound, .5f);
+			Die();
 		}
+		
 		if (Input.GetKeyDown(KeyCode.P)) {
 			isPaused = !isPaused;
 		}
