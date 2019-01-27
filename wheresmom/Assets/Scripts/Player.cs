@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public static float consumptionRate = .05f;
+    public static float consumptionRate = .1f;
     public static float maxEnergy = 100.0f;
     public float energy;
     public bool on = false;
