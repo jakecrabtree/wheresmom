@@ -121,9 +121,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4357e56befb40423b9d447649afded72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aggroDist: 0
-  aggroSpeed: 0
-  aggroDelayDetach: 0
+  aggroDist: 8
+  aggroSpeed: 2
+  aggroDelayDetach: 1
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -150,7 +150,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 0.5
+  m_Speed: 1.25
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
